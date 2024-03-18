@@ -1,0 +1,141 @@
+<html>
+<head>
+	<title>My Book</title>
+</head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<body bgcolor="skyblue">
+	</body>
+    <p>
+    	<center>
+    	<ul style="list-style-type: none;  padding: 0;">
+        <li style="display: inline; background-color:skyblue; margin-right: 10px"><a href="./home.html">HOME</a></li>
+        <li style="display: inline; background-color:skyblue; margin-right: 10px"><a href="./about.html">ABOUT</a></li>
+        <li style="display: inline; background-color:skyblue; margin-right: 10px"><a href="./contact.html">CONTACT</a></li>
+        <li style="display: inline; background-color:skyblue; margin-right: 10px"><a href="./services.html">SERVICES</a></li>
+        <li style="display: inline; background-color:skyblue; margin-right: 10px"><a href="./form.html">FORM</a></li>
+        <li style="display: inline; background-color:skyblue; margin-right: 10px"><a href="./table.html">TABLE</a></li>
+        <li style="display: inline; background-color:skyblue; margin-right: 10px"><a href="./book.html">MYBOOK</a></li>
+    </ul></center>
+
+	</p>
+	<h1>AIR-TECH-BOOKING AIRPORT.</h1
+	<ol><h2><u><li>DATABASE</li></u></h2>
+		<p>Database Name: <b>AIR-TECH-BOOKING AIRPORT</b></p>
+		<ul type="square"><h3><u><i><li>Tables</li></i></u></h3>
+
+			<ol type="a"><li><b>The airline TABLE</b></li>
+
+			<p>T, the "airline" table would store information related to airlines that operate flights.  
+</p></br>
+
+			<li><b>Flights TABLE.</b></li>
+
+			<p> : The "flights" table keeps track of various details about each flight, including its unique ID, the airline operating it, the ticket price, and the number of available seats. This information helps manage and book flights efficiently within the flight booking system. </b></li>
+			<li><b>is PAYMENT TABLE</b></li>
+
+			<p> : The "payment" table helps track the financial aspect of flight bookings, including details about each payment transaction, the associated booking, payment amount, payment date, and payment method. This information is crucial for managing payments, tracking revenue, and ensuring financial transparency within the flight booking system. 
+</p></br>
+
+			<li><b>is passenger TABLE</b></li>
+
+			<p>: The "passenger" table effectively stores information about each passenger, including their unique ID, the ID of the flight they're booked on, their name, gender, and email address. This information helps manage and track passenger details within the flight booking system. 
+ </p></br><li><b>Reservation TABLE</b></li>
+
+      <p>The "Reservation" table effectively stores information about each reservation, including the reservation ID, passenger ID, reservation time, and reservation date. This information helps manage and track flight reservations within the flight booking system.  
+ </p></br>
+
+			<li><b>Admin Table</b></li></ol>
+
+			<p> Admin table database structure This is table is table that will be only created by admin and will hold other system users apart from admin  will give them email and password that they will use to login and access the project or system, and also t used to register if she/he’s don’t have an account so once you must to create account in order to login and access or use the system.
+            Note: the created Admin will not have same ability and right in the system.
+ </p></li></br>
+
+			              <h3><u><i><li>Attributes and their relationships</li></i></u></h3>
+			              <ol type="Attributes and their relationships">
+			       <b>SQL QUERIES</b></br></br>
+			       
+    <ol type="i"><li>airline</li><br>
+
+   CREATE TABLE airline (<br>
+     airlineid INT PRIMARY KEY AUTO_INCREMENT,<br>
+         airlinecode VARCHAR(10) NOT NULL,<br> 
+             airlinename VARCHAR(100) NOT NULL <br>
+);<br> 
+
+
+
+    <li>Flights </li><br>
+    CREATE TABLE flights (<br>
+     flightid INT PRIMARY KEY AUTO_INCREMENT,<br>
+    airlineid INT,     ticketprice DECIMAL(10, 2) NOT NULL, <br>    availableseats INT NOT NULL,<br> 
+    FOREIGN KEY (airlineid) REFERENCES airline(airlineid)<br> 
+);<br> 
+
+<br> 
+			       
+    <li>payment</li><br>
+
+    CREATE TABLE payment (<br>
+     paymentid INT PRIMARY KEY AUTO_INCREMENT,<br>
+    bookingid INT,<br>     payment_amount DECIMAL(10, 2) NOT NULL,<br>     payment_date DATE NOT NULL, <br>    payment_method VARCHAR(<br>50) NOT NULL,<br>     FOREIGN KEY (bookingid) REFERENCES booking(bookingid)<br> 
+);<br> 
+ <li>payment</li><br>
+
+   CREATE TABLE reservation (<br>
+     reservationid VARCHAR(50) PRIMARY KEY,<br>     passengerid VARCHAR(50) NOT NULL,<br>CREATE TABLE reservation (     reservationid VARCHAR(50) PRIMARY KEY,<br>     passengerid VARCHAR(50) NOT NULL,<br>     reservationtime TIME NOT NULL,<br>     reservationdate DATE NOT NULL 
+);<br> 
+ <li>payment</li><br>
+
+    CREATE TABLE passenger (<br> 
+    passengerid VARCHAR(50) PRIMARY KEY,<br>
+         flightid INT NOT NULL,<br>   
+           passengername VARCHAR(100) NOT NULL,<br>   
+             passengergender VARCHAR(10) NOT NULL,<br> 
+                passengeremail VARCHAR(100) NOT NULL<br>
+);<br>
+
+<P><b>Reference:  
+1. Six-Step Relational Database Design Second Edition (Fidel A Captain, 2016)  2. www.erbessd-instruments.com </b>  </P>
+
+	</body>
+
+        </ul>
+		<h2><u><li>JAVA</li></u></h2>
+		
+		<ul type="square"><h3><u><i><li>Description</li></i></u></h3><br>
+			<p> In this chapter I will be describing how powerful generalpurpose programming language was used to create the analyzed system. Under this chapter I will undergo full detail of how everything will function together with database that have been describe above and how it cope with full analyzed system.  Tools used to develop this system in java programming:<br><br>
+			 <h4><u><li>Tools used to develop this system in java programming</li></u></h4>
+		
+Eclipse IDE: an integrated development environment used in computer programming. It contains a base workspace and an extensible plug-in system for customizing the environment. It is the second-most-popular IDE for Java development, and, until 2016, was the most popular.  
+JAR stands for Java Archive. It's a file format based on the popular ZIP file format and is used for aggregating many files into one. Although JAR can be used as a general archiving tool, the primary motivation for its development was so that Java applets and their requisite components.  
+</p></br>
+			              <h3><u><i><li>Forms and Images</li></i></u></h3>
+
+        </ul>
+        <P><i>AIRLINE FORM</i></p>
+        <img src="image/AIRLINE FORM.jpg" width=600 height=200><br>
+        <P><i>FLIGHT FORM</i></p>
+        <img src="image/FLIGHT FORM.jpg" width=600 height=200><br>
+        <P><i>RESERVATION FORM</i></p>
+        <img src="image/RESERVATION FORM.jpg" width=600 height=200><br>
+        <P><i>PASSENGER FORM</i></p>
+        <img src="image/PASSENGER FORM.jpg" width=600 height=200><br>
+        <P><i>PAYMENT FORM</i></p>
+        <img src="image/PAYMENT FORM.jpg" width=600 height=200><br>
+        <P><i>SINUP FORM</i></p>
+        <img src="image/SINUP FORM.jpg" width=600 height=200><br>
+        <P><i>LOGIN FORM</i></p>
+        <img src="image/LOGIN FORM.jpg" width=600 height=200><br>
+        <P><i>MENU FORM</i></p>
+        <img src="image/MENU FORM.jpg" width=600 height=200><br>
+        <P><b>References<br> 
+1.https://www.javatpoint.com/operators-in-java<br>
+2.	www.eclipse.org>windowbuilider<br>   
+3.	www.vogella.com>article<br>   
+4.	www.formdev.com>ides>eclipse   
+</b>  </P>
+</ol>
+	<marquee><p><i><h2 style="color: white;">Prepared By:</i></p>BARAKA RITHA </h2></marquee>
+	</body>
+	</html>
